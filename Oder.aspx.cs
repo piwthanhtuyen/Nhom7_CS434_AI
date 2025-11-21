@@ -1,62 +1,54 @@
-﻿using System;
+using System;
 using System.Data;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.Data.SqlClient;
 using System.Web.UI;
-using System.Web.UI.WebControls;
-
+using GridView = System.Web.UI.WebControls.GridView;
+using Label = System.Web.UI.WebControls.Label;
 namespace WebApplication1
 {
     public partial class Oder : System.Web.UI.Page
     {
+        private string connStr = @"Data Source=.;Initial Catalog=BookStore;Integrated Security=True";
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                LoadOrder1();
-                LoadOrder2();
+                LoadOrder(1, GridView1, lblTotal1);
+                LoadOrder(2, GridView2, lblTotal2);
             }
         }
 
-        private void LoadOrder1()
+        private void LoadOrder(int orderId, GridView grid, Label lblTotal)
         {
-            DataTable tb = new DataTable();
-            tb.Columns.Add("SanPham");
-            tb.Columns.Add("SoLuong");
-            tb.Columns.Add("DonGia");
-            tb.Columns.Add("ThanhTien");
+            using (SqlConnection conn = new SqlConnection(connStr))
+            {
+                conn.Open();
 
-            int soLuong = 1;
-            int donGia = 50000;
-            int thanhTien = soLuong * donGia;
+                string sql = @"
+            SELECT SanPham, SoLuong, DonGia, (SoLuong * DonGia) AS ThanhTien
+            FROM ChiTietDonHang 
+            WHERE MaDonHang = @id";
 
-            tb.Rows.Add("Sách A", soLuong, donGia.ToString("N0") + " đ", thanhTien.ToString("N0") + " đ");
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@id", orderId);
 
-            GridView1.DataSource = tb;
-            GridView1.DataBind();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable tb = new DataTable();
+                da.Fill(tb);
 
-            lblTotal1.Text = "Tổng tiền đơn hàng: " + thanhTien.ToString("N0") + " đ";
+                grid.DataSource = tb;
+                grid.DataBind();
+                int tong = 0;
+                foreach (DataRow r in tb.Rows)
+                {
+                    tong += Convert.ToInt32(r["ThanhTien"]);
+                }
+
+                lblTotal.Text = "Tổng tiền đơn hàng: " + tong.ToString("N0") + " đ";
+            }
         }
 
-        private void LoadOrder2()
-        {
-            DataTable tb = new DataTable();
-            tb.Columns.Add("SanPham");
-            tb.Columns.Add("SoLuong");
-            tb.Columns.Add("DonGia");
-            tb.Columns.Add("ThanhTien");
-
-            int soLuong = 2;
-            int donGia = 70000;
-            int thanhTien = soLuong * donGia;
-
-            tb.Rows.Add("Sách B", soLuong, donGia.ToString("N0") + " đ", thanhTien.ToString("N0") + " đ");
-
-            GridView2.DataSource = tb;
-            GridView2.DataBind();
-
-            lblTotal2.Text = "Tổng tiền đơn hàng: " + thanhTien.ToString("N0") + " đ";
-        }
     }
+}
 }
