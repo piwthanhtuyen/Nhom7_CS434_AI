@@ -15,25 +15,25 @@
 6. Chức năng xem chi tiết sản phẩm - Lê Văn Ngọc 
 - Chức năng Xem chi tiết sản phẩm cho phép người dùng lựa chọn một sản phẩm từ danh sách và xem đầy đủ thông tin liên quan đến sản phẩm đó. Giao diện được thiết kế rõ ràng, trực quan, giúp người dùng dễ dàng nắm bắt thông tin.
 7. Trần Thanh Thiên - Thống kê báo cáo (doanh thu, sản phẩm bán chạy, khách hàng VIP)
-### Mô tả chức năng thống kê
-Chức năng **thống kê báo cáo** giúp quản trị viên theo dõi nhanh các số liệu quan trọng của hệ thống thông qua bảng dữ liệu và biểu đồ.
-Chức năng bao gồm 3 phần chính:
-**Doanh thu theo tháng**
+#### Mô tả chức năng thống kê
+- Chức năng **thống kê báo cáo** giúp quản trị viên theo dõi nhanh các số liệu quan trọng của hệ thống thông qua bảng dữ liệu và biểu đồ.
+- Chức năng bao gồm 3 phần chính:
+##### Doanh thu theo tháng
 - Hiển thị bảng doanh thu theo từng tháng.
 - Vẽ biểu đồ cột (Column chart) thể hiện doanh thu.
 - Cho phép xuất dữ liệu doanh thu ra file Excel.
-**Top sản phẩm bán chạy**
+##### Top sản phẩm bán chạy
 - Hiển thị danh sách các sản phẩm bán chạy nhất.
 - Vẽ biểu đồ hình tròn (Pie chart) thể hiện tỉ lệ số lượng bán.
 - Cho phép xuất dữ liệu top sản phẩm ra file Excel.
-**Khách hàng VIP**
+##### Khách hàng VIP
 - Hiển thị danh sách khách hàng có mức chi tiêu cao (VIP).
 - Thể hiện tổng số đơn hàng và tổng chi tiêu.
 - Cho phép xuất danh sách khách hàng VIP ra file Excel.
 ## Công nghệ sử dụng
-ASP.NET Web Forms (.aspx)
-C#
-SQL Server
-ADO.NET
-JavaScript (Inline Alert)
-HTML + CSS
+- ASP.NET Web Forms (.aspx)
+- C#
+- SQL Server
+- ADO.NET
+- JavaScript (Inline Alert)
+- HTML + CSS
