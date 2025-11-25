@@ -1,0 +1,140 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.Master.cs" Inherits="DoAn.main" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>BookStoreTV</title>
+    <link href="Styles/style.css" rel="stylesheet" />
+    <style>
+        body {
+            background-color: burlywood;
+            margin: 0;
+            font-family: Arial;
+            padding-top: 90px;
+
+        }
+
+        .header {
+            background-color: #f8f8f8;
+            border-bottom: 1px solid #ddd;
+            padding: 25px 25px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: dodgerblue;
+            white-space: nowrap;
+        }
+
+        .logo a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: dodgerblue;
+        }
+
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .search-box {
+            display: flex;
+            flex: 1;
+            max-width: 400px;
+        }
+
+        .search-box input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-right: none;
+            border-radius: 4px 0 0 4px;
+        }
+
+        .search-box button {
+            padding: 10px 16px;
+            border: 1px solid #ccc;
+            background-color: white;
+            border-left: none;
+            border-radius: 0 4px 4px 0;
+            color: #009688;
+            cursor: pointer;
+        }
+
+        .header-links {
+            display: flex;
+            gap: 15px;
+            white-space: nowrap;
+            font-size: 14px;
+            color: #009688;
+            align-items: center;
+        }
+
+        .header-links a {
+            text-decoration: none;
+            color: dodgerblue;
+        }
+
+        .cart-count {
+            background-color: red;
+            color: white;
+            font-size: 12px;
+            padding: 2px 6px;
+            border-radius: 50%;
+            margin-left: 5px;
+        }
+
+        .search-panel {
+            display: flex;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="form1" runat="server">
+        <div class="header">
+            <div class="header-inner">
+                <div class="logo">
+                    <a href="TrangChu.aspx">
+                        <img src="Images/OIP.jpg" alt="Logo" />
+                        <span>BookStoreTV</span>
+                    </a>
+                </div>
+
+                <div class="search-box">
+                    <asp:Panel runat="server" DefaultButton="btnSearch" CssClass="search-panel">
+                        <asp:TextBox ID="txtSearch" runat="server" placeholder="Hôm nay bạn muốn tìm kiếm gì?" />
+                        <asp:Button ID="btnSearch" runat="server" Text="🔍 Tìm kiếm" OnClick="btnSearch_Click" />
+                    </asp:Panel>
+                </div>
+
+                <div class="header-links">
+                    <asp:HyperLink ID="lnkAccount" runat="server" Text="👤 Đăng Nhập" />
+                    <a href="Cart.aspx">🛒 Giỏ hàng</a>
+                    <a href="ThongKe.aspx">📊 Thống kê</a> 
+                    <asp:LinkButton ID="lnkLogout" runat="server" Text="📤Đăng xuất" Visible="false" OnClick="lnkLogout_Click" CssClass="link-button" />
+                </div>
+            </div>
+        </div>
+
+        <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+    </form>
+</body>
+</html>
