@@ -13,8 +13,9 @@ Người dùng cung cấp:
   - Họ và tên
   - Số điện thoại
   - Địa chỉ giao hàng
-  - Chọn phương thức thanh toán:  + Thanh toán online (QR Code). Hệ thống hiển thị mã QR để người dùng quét. Sau khi xác thực → chuyển trạng thái "Thanh toán thành công".
-                                  + Thanh toán khi nhận hàng (COD). Đơn hàng lưu trạng thái “Chờ thanh toán”.
+  - Chọn phương thức thanh toán:
+    + Thanh toán online (QR Code). Hệ thống hiển thị mã QR để người dùng quét. Sau khi xác thực → chuyển trạng thái "Thanh toán thành công".
+    + Thanh toán khi nhận hàng (COD). Đơn hàng lưu trạng thái “Chờ thanh toán”.
 Xử lý đơn hàng : 
   - Hệ thống tạo đơn hàng kèm danh sách sản phẩm.
   - Tự động cập nhật tồn kho.
