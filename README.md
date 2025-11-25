@@ -1,5 +1,5 @@
 # Nhom7_CS434AI
-Chức năng thêm vào giỏ hàng cho phép người dùng lưu sản phẩm muốn mua vào giỏ.
+Chức năng thêm vào giỏ hàng cho phép người dùng lưu sản phẩm muốn mua vào giỏ hàng.
 Công nghệ sử dụng
 
 - ASP.NET Web Forms (.aspx)
