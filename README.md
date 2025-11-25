@@ -2,7 +2,7 @@
 1. Chức năng và thành viên thực hiện
 1.1.Chức năng Tìm kiếm sản phẩm - Đào Võ Thanh Tuyền 
 - Chức năng tìm kiếm sản phẩm cho phép người dùng nhập từ khóa để tìm các sản phẩm có tên trùng khớp trong cơ sở dữ liệu.
-Chức năng bao gồm: Ô tìm kiếm (search bar) trên trang Master, gửi từ khóa qua QueryString, lấy dữ liệu từ database, hiển thị kết quả dưới dạng grid, phân trang (paging: next/prev), thông báo nếu không tìm thấy sản phẩm
+- Chức năng bao gồm: Ô tìm kiếm (search bar) trên trang Master, gửi từ khóa qua QueryString, lấy dữ liệu từ database, hiển thị kết quả dưới dạng grid, phân trang (paging: next/prev), thông báo nếu không tìm thấy sản phẩm
 1.2.Chức năng Thanh Toán - Thùy Ngọc Khoa
 - Giới thiệu dự án Website Bán Sách Online cho phép người dùng xem sách, thêm vào giỏ hàng và thực hiện thanh toán bằng QR Code hoặc Thanh toán khi nhận hàng (COD). Chức năng thanh toán là một trong những phần quan trọng nhất của hệ thống, đảm bảo trải nghiệm người dùng mượt mà và chính xác.
 1.3.Chức năng Xem chi tiết đơn hàng - Nguyễn Văn Quân
