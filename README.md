@@ -3,6 +3,7 @@ Chức năng Thanh Toán - Thùy Ngọc Khoa
 Giới thiệu dự án Website Bán Sách Online cho phép người dùng xem sách, thêm vào giỏ hàng và thực hiện thanh toán bằng QR Code hoặc Thanh toán khi nhận hàng (COD). Chức năng thanh toán là một trong những phần quan trọng nhất của hệ thống, đảm bảo trải nghiệm người dùng mượt mà và chính xác.
 
 ** Tính năng chính của chức năng Thanh Toán **
+
 Xem giỏ hàng :
   - Hiển thị danh sách sản phẩm người dùng đã chọn.
   - Mỗi mục bao gồm: Tên sách – Giá – Số lượng – Thành tiền.
