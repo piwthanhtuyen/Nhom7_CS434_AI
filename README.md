@@ -26,7 +26,7 @@ Cart.aspx.cs        // Code-behind xử lý logic giỏ hàng
 Main.Master         // File master chứa layout chung
 
 3. Luồng hoạt động giỏ hàng
-✔️ 3.1 Khi tải trang (Page_Load)
+3.1 Khi tải trang (Page_Load)
 
 Nếu chưa có CartId trong Session → tạo giỏ mới
 
@@ -34,7 +34,7 @@ Nếu người dùng đã đăng nhập → gán giỏ hàng tạm cho tài kho�
 
 Load toàn bộ sản phẩm trong giỏ
 
-✔️ 3.2 Load sản phẩm (LoadCartItems)
+3.2 Load sản phẩm (LoadCartItems)
 
 JOIN bảng CartItems + Products
 
@@ -42,7 +42,7 @@ Hiển thị lên GridView
 
 Tính tổng tiền giỏ hàng bằng UpdateTotalPrice()
 
-✔️ 3.3 Cập nhật số lượng (btnUpdateCart_Click)
+3.3 Cập nhật số lượng (btnUpdateCart_Click)
 
 Lặp qua từng hàng trong GridView
 
@@ -54,7 +54,7 @@ Load lại giỏ hàng
 
 UPDATE CartItems SET Quantity = @quantity WHERE Id = @cartItemId
 
-✔️ 3.4 Xóa sản phẩm (gvCart_RowCommand)
+3.4 Xóa sản phẩm (gvCart_RowCommand)
 
 Khi nhấn nút “Xóa”
 
@@ -66,7 +66,7 @@ Load lại giỏ
 
 DELETE FROM CartItems WHERE Id = @cartItemId
 
-✔️ 3.5 Thanh toán
+3.5 Thanh toán
 
 Nếu chưa đăng nhập → Redirect sang Login + returnUrl
 
